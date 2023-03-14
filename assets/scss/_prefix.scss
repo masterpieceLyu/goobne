@@ -1,0 +1,244 @@
+
+/*========== Colors ==========*/
+$c-main:#FBF5F0;
+$c-point:#D4000B;
+$c-bk-1:#000000;
+$c-gray-1:#535353;
+$c-gray-2:#4E4E4E;
+$c-gray-3:#A2A2A2;
+
+$c-best:#FF7B5A;
+$c-md:#FFAF28;
+
+
+
+
+
+/*========== Font and typography ==========*/
+// font size : 16px 기준 
+$px10:1rem;
+$px11:1.1rem;
+$px12:1.2rem;
+$px13:1.3rem;
+$px14:1.4rem;
+$px16:1.6rem;
+$px18:1.8rem;
+$px20:2rem;
+$px22:2.2rem;
+$px24:2.4rem;
+$px26:2.6rem;
+$px28:2.8rem;
+$px30:3rem;
+$px32:3.2rem;
+$px33:3.3rem;
+$px34:3.4rem;
+$px36:3.6rem;
+$px38:3.8rem;
+$px40:4rem;
+$px42:4.2rem;
+$px44:4.4rem;
+$px46:4.6rem;
+$px48:4.8rem;
+$px50:5rem;
+$px60:6rem;
+
+$m-h1:28px;
+$m-h2:24px;
+$m-h3:18px;
+$m-h4:16px;
+
+$font-rubik:'Rubik', 'NanumSquareRound', 'Noto Sans KR', sans-serif;
+
+$space:2.5rem;
+
+// font weight 
+// --font-medium: 500;
+// --font-semi-bold: 600;
+
+/*========== z index ==========*/
+// --z-tooltip: 10;
+// --z-fixed: 100;
+
+
+// font set 
+@mixin  f-set-total($px,$weight,$color) {
+    font-size: $px;
+    font-weight: $weight;
+    color: $color;
+}
+@mixin  f-set-weight($px,$weight) {
+  font-size: $px;
+  font-weight: $weight;
+}
+@mixin  f-set-color($px,$color) {
+  font-size: $px;
+  color: $color;
+}
+
+@mixin clear-both {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+@mixin border($color) {
+  border:1px solid $color;
+}
+
+@mixin box-shadow {
+  -webkit-box-shadow: 0 3px 30px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 3px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 30px rgba(0,0,0,0.1);
+}
+@mixin bg-base {
+  box-sizing: border-box;
+  background-color: #fff;
+  @include box-shadow;
+  border-radius: 5px;
+  padding:$px-20;
+}
+
+@mixin bg-img($ul, $size:100%, $repeat: no-repeat, $positionX:center, $positionY:center) {
+  background-image: url($ul);
+  background-size: $size;
+  background-repeat: $repeat;
+  background-position: $positionX $positionY;
+}
+
+@mixin center-align-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin vertical-align-flex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin vertical-align-end {
+  display: flex;
+  align-items: flex-end;
+}
+
+@mixin horizon-align-flex {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin horizon-align-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+@mixin horizon-align-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@mixin height-align {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin align-wrap {
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+//말줄임표
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 한줄 width 설정 
+@mixin ellipsis($w) {
+  width:$w;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 여러줄일때 
+@mixin ellipsis2($line,$w,$h) {
+  width:$w;
+  height:$h;
+  text-overflow: ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp:$line;
+  -webkit-box-orient:vertical;
+}
+
+
+@mixin box-sizing($type) {
+  -webkit-box-sizing: $type;
+  -moz-box-sizing: $type;
+  box-sizing: $type;
+}
+
+@mixin border-radius($num) {
+  -webkit-border-radius: $num;
+  -moz-border-radius: $num;
+  border-radius: $num;
+}
+
+@mixin transition($type, $second) {
+  -webkit-transition: $type $second;
+  -moz-transition: $type $second;
+  -o-transition: $type $second;
+  transition: $type $second;
+}
+
+
+
+@mixin background-size($num) {
+  -webkit-background-size: $num;
+  -moz-background-size: $num;
+  -o-background-size: $num;
+  background-size: $num;
+}
+
+@mixin transform-skew($num) {
+  -webkit-transform: skew($num);
+  -ms-transform: skew($num);
+  -moz-transform: skew($num);
+  -o-transform: skew($num);
+  transform: skew($num);
+}
+
+@mixin transform-rotate($num) {
+  -webkit-transform: rotate($num);
+  -ms-transform: rotate($num);
+  -moz-transform: rotate($num);
+  -o-transform: rotate($num);
+  transform: rotate($num);
+}
+
+@mixin square($num) {
+  width: $num;
+  height: $num;
+}
+
+@mixin full-circle($num) {
+  @include square($num);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+@mixin vertical-height($height) {
+  height: $height;
+  line-height: $height;
+}
+
+@mixin center-align-position($width, $height) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -($height/2);
+  margin-left: -($width/2);
+  width: $width;
+  height: $height;
+}
+

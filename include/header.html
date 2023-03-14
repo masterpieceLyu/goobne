@@ -1,0 +1,47 @@
+<div class="inner">
+    <div class="logo">
+        <a href="index.html">
+            <img src="../assets/images/common/logo.svg" alt="logo">
+        </a>
+    </div>
+    <div class="search-area search-active">
+        <button class="search-btn"></button>
+        <input type="text" class="input-search" placeholder="주변 매장의 프로모션을 확인해보세요!">
+    </div>
+    <!-- 모바일 -->
+    <div class="search-area mo-search-area">
+        <button class="search-btn"></button>
+        <input type="text" class="input-search" placeholder="내 주변 매장">
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="#none">온라인 주문</a></li>
+            <li><a href="#none">메뉴소개</a></li>
+            <li><a href="#none">매장찾기</a></li>
+            <li><a href="#none">이벤트</a></li>
+        </ul>
+    </div>
+    <div class="btn-cnt-area">
+        <div class="login-btn"></div>
+        <button class="search-icon mobile"></button>
+        <div class="sub-menu-btn">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.search-active .search-btn').click(function () {
+        $('.search-area .input-search').toggleClass('is-show');
+        $('#header').toggleClass('is-active');
+    });
+
+      // 햄버거 버튼  구현 영역 
+      $('.sub-menu-btn').click( function(){
+        $('#wrap').addClass('non-scroll');
+        $('.aside__dimmed-bg').removeClass('l-hidden');
+        $('.aside__lnb').addClass('is-active');
+    });
+</script>

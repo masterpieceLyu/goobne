@@ -1,0 +1,122 @@
+<div class="aside__dimmed-bg l-hidden"></div>
+<div class="aside__lnb">
+   <div class="aside__lnb-inner">
+      <button type="button" class="aside__lnb-close"></button>
+      <div class="aside__lnb-login l-hidden">
+         <a href="#none" class="link">Login</a>
+         <span class="bar"></span>
+         <a href="#none" class="link">Join</a>
+      </div>
+      <!-- 로그인시 보여지는 영역 -->
+      <div class="aside__lnb-login">
+         <a href="#none" class="arrow-link"><span>구울레옹</span>님 환영합니다.</a>
+      </div>
+      <!-- // 로그인시 보여지는 영역 -->
+      <div class="aside__scroll">
+         <ul class="aside__lnb-list">
+            <li><a href="#none">온라인 주문</a></li>
+            <li class="list-arrow">
+               <a href="#none">메뉴소개</a>
+               <ul class="dept">
+                  <li><a href="#none">오븐바사삭</a></li>
+                  <li><a href="#none">구울레옹 세트</a></li>
+                  <li><a href="#none">불금치킨</a></li>
+                  <li><a href="#none">치PD</a></li>
+                  <li><a href="#none">치킨메뉴</a></li>
+                  <li><a href="#none">피자메뉴</a></li>
+                  <li><a href="#none">사이드메뉴</a></li>
+               </ul>
+            </li>
+            <li class="list-arrow">
+               <a href="#none">매장찾기</a>
+               <ul class="dept">
+                  <li><a href="#none">월별 신규매장</a></li>
+                  <li><a href="#none">국내매장</a></li>
+                  <li><a href="#none">해외매장/GLOBAL</a></li>
+               </ul>
+            </li>
+            <li class="list-arrow">
+               <a href="#none">창업정보</a>
+               <ul class="dept">
+                  <li><a href="#none">창업정보</a></li>
+                  <li><a href="#none">창업FAQ</a></li>
+                  <li><a href="#none">창업 전화상담</a></li>
+                  <li><a href="#none">온라인 전화상담</a></li>
+                  <li><a href="#none">창업비용</a></li>
+               </ul>
+            </li>
+            <li class="list-arrow">
+               <a href="#none">브랜드스토리</a>
+               <ul class="dept">
+                  <li><a href="#none">브랜드스토리</a></li>
+                  <li><a href="#none">연혁&수상</a></li>
+                  <li><a href="#none">인재채용</a></li>
+                  <li><a href="#none">경영철학</a></li>
+                  <li><a href="#none">CEO 인사말</a></li>
+               </ul>
+            </li>
+            <li class="list-arrow">
+               <a href="#none">이벤트</a>
+               <ul class="dept">
+                  <li><a href="#none">진행중인이벤트</a></li>
+               </ul>
+            </li>
+            <li>
+               <a href="#none">고객의소리</a>
+            </li>
+            <li>
+               <a href="#none">공지사항</a>
+            </li>
+         </ul>
+         <dl class="aside__num l-hidden">
+            <dt>주문전화</dt>
+            <dd>1661-9494</dd>
+         </dl>
+         <div class="l-info-area">
+            <div class="info-num">
+               <dl>
+                  <dt>현재 경험치</dt>
+                  <dd>9494</dd>
+               </dl>
+               <dl>
+                  <dt>다음등급까지</dt>
+                  <dd>70</dd>
+               </dl>
+               <dl>
+                  <dt>쿠폰</dt>
+                  <dd>2</dd>
+               </dl>
+            </div>
+            <div class="info-grade">
+               <span>구울레옹</span>님의 등급은 <span class="eng">SILVER</span>입니다.
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+<script>
+    // aside close 구현 영역 
+    $('.aside__lnb-close').click( function(){
+        $('#wrap').removeClass('non-scroll');
+        $('.aside__dimmed-bg').addClass('l-hidden');
+        $('.aside__lnb').removeClass('is-active');
+    });
+
+    // aside 메뉴 영역
+    $('.aside__lnb-list >li >a').click( function(){
+        $(this).toggleClass('is-active');
+        $(this).next().toggleClass('is-show');
+
+        $(this).parent().siblings().children('a').removeClass('is-active');
+        $(this).parent().siblings().children('.dept').removeClass('is-show');
+    });
+
+    // 메인 환영합니다. 버튼 영역 
+    $('.mo-login-cnt . mo-login').click( function(){
+        $(this).children('.arrow-link').toggleClass('is-active');
+        $('.mo-info-area').toggleClass('l-hidden');
+    });
+
+</script>
